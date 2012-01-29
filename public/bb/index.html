@@ -1,0 +1,49 @@
+<!doctype html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>ipull</title>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/underscore.js"></script>
+    <script src="js/vendor/backbone.js"></script>
+    <script src="js/Courses.js"></script> <!-- MAIN BACKBONE CODE -->
+
+    <script type="text/template" id="courselist-template">
+      <h1> List of Courses </h1>
+      <table class="courses">
+        <thead>
+          <tr>
+            <th> Name </th>
+            <th> Description </th>
+            <th> Location </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </script>
+
+    <script type="text/template" id="course-template">
+        <td><%= name %></td>
+        <td><%= description %></td>
+        <td><%= location %></td>
+    </script>
+
+    <script type="application/javascript">
+      jQuery(function() {
+        window.courses.fetch(); // Fetch from the server at get 'courses.json'
+        // as specified in the backbone collection in js/Courses.js
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+    </div>
+  </body>
+</html>
